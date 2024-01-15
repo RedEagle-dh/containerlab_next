@@ -18,10 +18,10 @@ export async function GET(request: Request) {
 	async function runCommandsSequentially() {
 		try {
 			// Erster Befehl
-			const result1: any = await execAsync(
+			/* const result1: any = await execAsync(
 				`sudo containerlab deploy -t ${ymlPath}`
 			);
-			console.log("Erster Befehl ausgeführt:", result1.stdout);
+			console.log("Erster Befehl ausgeführt:", result1.stdout); */
 
 			// Zweiter Befehl, ausgeführt nachdem der erste Befehl abgeschlossen ist
 			const result2: any = await execAsync(
