@@ -1,10 +1,10 @@
 import { exec } from "child_process";
 
 export async function GET(request: Request) {
-	const wslPath = "/home/redeagle/CLab/srl02/srl02.clab.yml"; // WSL-Pfad
+	const ymlPath = "/home/dave/testing/clab-files/srl02/srl02.clab.yml"; // WSL-Pfad
 
 	exec(
-		`wsl sudo containerlab deploy -t ${wslPath}`,
+		`wsl sudo containerlab deploy -t ${ymlPath}`,
 		(error, stdout, stderr) => {
 			if (error) {
 				console.error(`Ausführungsfehler: ${error}`);
@@ -16,7 +16,7 @@ export async function GET(request: Request) {
 	);
 
 	exec(
-		`wsl sudo containerlab graph --topo ${wslPath} --srv ":3002"`,
+		`wsl sudo containerlab graph --topo ${ymlPath} --srv ":3002"`,
 		(error, stdout, stderr) => {
 			if (error) {
 				console.error(`Ausführungsfehler: ${error}`);
@@ -27,5 +27,5 @@ export async function GET(request: Request) {
 		}
 	);
 
-    return new Response("Hello world!");
+	return new Response("Hello world!");
 }
