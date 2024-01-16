@@ -1,6 +1,14 @@
 import { exec } from "child_process";
+import { NextApiRequest, NextApiResponse } from "next";
+import NextCors from "nextjs-cors";
 
-export async function GET(request: Request) {
+export async function GET(request: NextApiRequest, response: NextApiResponse) {
+	await NextCors(request, response, {
+		// Options
+		methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+		origin: "*",
+		optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+	});
 	const ymlPath = "/home/dave/testing/clab-files/srl02/srl02.clab.yml"; // WSL-Pfad
 
 	function execAsync(command: string) {
