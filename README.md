@@ -1,40 +1,25 @@
-# Next.js & NextUI Template
+# NextJS Front- & Backend with Embedded CLab Graph
 
-This is a template for creating applications using Next.js 13 (app directory) and NextUI (v2).
+## Config
 
-## Technologies Used
-
-- [Next.js 13](https://nextjs.org/docs/getting-started)
-- [NextUI v2](https://nextui.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-
-## How to Use
-
-
-### Use the template with create-next-app
-
-To create a new project based on this template using `create-next-app`, run the following command:
-
+1. Start docker
 ```bash
-npx create-next-app -e https://github.com/nextui-org/next-app-template
+sudo service docker start
 ```
 
-### Install dependencies
-
+2. Deploy CLab yml
 ```bash
-npm install
+sudo clab deploy -t srl02.clab.yml
 ```
 
-### Run the development server
+3. Graph the CLab Container
+```bash
+sudo clab graph --topo srl02.clab.yml --srv ":3002"
+```
 
+4. Start Web-App
 ```bash
 npm run dev
 ```
 
-## License
-
-Licensed under the [MIT license](https://github.com/nextui-org/next-app-template/blob/main/LICENSE).
+![alt text](/public/WebsiteScreen.png)
