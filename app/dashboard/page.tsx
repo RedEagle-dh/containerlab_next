@@ -3,6 +3,7 @@ import IssuesCard from "../components/cards/IssuesCard";
 import DevicesCard from "../components/cards/DevicesWithAlertsCard";
 import AlertSummaryCard from "../components/cards/AlertSummaryCard";
 import NetworkCard from "../components/cards/NetworkCard";
+import TopologyCard from "../components/cards/TopologyCard";
 
 const DashboardPage = () => {
     return (
@@ -15,8 +16,8 @@ const DashboardPage = () => {
 
                 </div>
                 <div className="flex gap-4 mt-4">
-
                     <AlertSummaryCard />
+                    <TopologyCard />
                 </div>
             </div>
         </div>
