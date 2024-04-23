@@ -17,8 +17,9 @@ const DashboardPage = () => {
                 </div>
                 <div className="flex gap-4 mt-4">
                     <AlertSummaryCard />
-                    <TopologyCard />
+
                 </div>
+                <TopologyCard />
             </div>
         </div>
     )

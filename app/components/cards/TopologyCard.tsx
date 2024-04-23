@@ -2,7 +2,7 @@ import React from 'react'
 
 const TopologyCard = () => {
     return (
-        <div className="bg-white shadow-lg rounded-lg flex flex-col justify-between p-6 max-w-xl w-full">
+        <div className="bg-white shadow-lg rounded-lg flex flex-col justify-between p-6 w-full">
             <div>
                 <div className="flex justify-between items-center mb-4">
                     <h3 className="text-lg font-bold text-gray-900">Network Topology</h3>
