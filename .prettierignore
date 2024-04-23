@@ -1,0 +1,7 @@
+node_modules/
+dist/
+yarn.lock
+tsconfig.tsbuildinfo
+.next/
+.vscode/
+*.d.ts

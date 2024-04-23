@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
-import { Providers } from "./providers";
+import { ThemeProvider } from "./providers";
+import ShadNavbar from "./components/navbars/ShadNavbar";
 
 export const metadata: Metadata = {
 	title: {
@@ -24,13 +25,16 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<head />
 			<body>
-				<Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-					<div className="relative flex flex-col h-screen">
-						<main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-							{children}
-						</main>
-					</div>
-				</Providers>
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					forcedTheme="light"
+					disableTransitionOnChange
+				>
+					<ShadNavbar>
+						{children}
+					</ShadNavbar>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
