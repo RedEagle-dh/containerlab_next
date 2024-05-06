@@ -12,6 +12,16 @@ import {
     SquareUser,
 } from "lucide-react"
 
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
 import { Button } from "@/components/ui/button"
 import {
     Tooltip,
@@ -157,15 +167,26 @@ const ShadNavbar = ({ children }: { children: React.ReactNode }) => {
             <div className="flex flex-col">
                 <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
                     <h1 className="text-xl font-semibold">DigSiNet</h1>
+                    <div className="ml-auto flex gap-2 items-center">
+                        <Select>
+                            <SelectTrigger className="w-[180px]">
+                                <SelectValue placeholder="Network" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="realnet">RealNet</SelectItem>
+                                <SelectItem value="sibling">Sibling</SelectItem>
+                            </SelectContent>
+                        </Select>
+                        <Button
+                            variant="outline"
+                            size="sm"
+                            className="ml-auto gap-1.5 text-sm"
+                        >
+                            <LogIn className="size-3.5" />
+                            Login
+                        </Button>
+                    </div>
 
-                    <Button
-                        variant="outline"
-                        size="sm"
-                        className="ml-auto gap-1.5 text-sm"
-                    >
-                        <LogIn className="size-3.5" />
-                        Login
-                    </Button>
                 </header>
             </div>
             {children}
