@@ -43,6 +43,7 @@ import { CalendarIcon } from 'lucide-react';
 import { Calendar } from '@/components/ui/calendar';
 import { addDays, format } from 'date-fns';
 import { DateRange } from 'react-day-picker';
+import { OverviewMessage } from '@/lib/types/overview';
 const edgeTypes = {
 	'custom-edge': CustomEdge,
 };
@@ -50,7 +51,7 @@ const edgeTypes = {
 const nodeTypes = { custom: CustomNode };
 export default function Home() {
 	// TODO receive this object from the backend via websockets
-	const topoObject = {
+	/* const topoObject = {
 		topology: {
 			name: 'realnet_continuous_integration',
 			topology: {
@@ -86,7 +87,7 @@ export default function Home() {
 		interfaces: {
 			gnmi: '<not serializable>',
 		},
-	};
+	}; */
 	const { toast } = useToast();
 	const [nodes, setNodes, onNodesChange] = useNodesState([]);
 	const [edges, setEdges, onEdgesChange] = useEdgesState([]);
@@ -97,6 +98,32 @@ export default function Home() {
 
 	const [isConnected, setIsConnected] = useState(false);
 	const [transport, setTransport] = useState('N/A');
+
+	const [overviewData, setOverviewData] = useState<any>();
+	const [topologyData, setTopologyData] = useState();
+
+	const [network, setNetwork] = useState();
+
+	useEffect(() => {
+		// data does not getting fetched, it's just a request so kafka offset will be resetted
+		const loadData = async () => {
+			console.log('Requesting overview data');
+			await fetch('http://localhost:3002/api/digsinet', {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				}
+			})
+			console.log('Requesting topo data');
+			await fetch('http://localhost:3002/api/digsinet/topologies', {
+				method: 'GET',
+				headers: {
+					'Content-Type': 'application/json',
+				}
+			})
+		}
+		loadData();
+	}, [])
 
 	useEffect(() => {
 		if (socket.connected) {
@@ -122,23 +149,29 @@ export default function Home() {
 		socket.on('connect', onConnect);
 		socket.on('disconnect', onDisconnect);
 
-		socket.on('data', (data) => {
-			console.log('Received data:', data);
-			const json = transformToReactFlowFormat(JSON.parse(data));
-			console.log(JSON.stringify(mapNodes));
-			console.log(JSON.stringify(json.nodes));
-			console.log(
-				JSON.stringify(json.edges) !== JSON.stringify(mapEdges) ||
-					JSON.stringify(json.nodes) !== JSON.stringify(mapNodes)
-			);
-			if (
-				JSON.stringify(json.edges) !== JSON.stringify(mapEdges) ||
-				JSON.stringify(json.nodes) !== JSON.stringify(mapNodes)
-			) {
-				setChanges(true);
-				setMapEdges(json.edges);
-				setMapNodes(json.nodes);
-			}
+		socket.on('topologyChange', (data) => {
+			console.log("Received Topology Change:");
+			console.log(data);
+			//const json = transformToReactFlowFormat(JSON.parse(data));
+
+		});
+		
+		socket.on('dataUpdate', (data) => {
+			const json: OverviewMessage = data;
+			console.log("Received Data Update:");
+			console.log(json);
+		});
+
+		socket.on('topologyData', (data) => {
+			const json: TopologyBuildResponse = data;
+			console.log("Received Topology Data:");
+			const { nodes, edges } = transformToReactFlowFormat(json);
+			console.log(nodes, edges)
+			setMapEdges(edges);
+			setMapNodes(nodes);
+			setNodes(nodes);
+			setEdges(edges);
+			//console.log(json);
 		});
 
 		return () => {
@@ -381,6 +414,19 @@ export default function Home() {
 							<h2 className='text-2xl font-semibold'>Actions</h2>
 						</CardHeader>
 						<CardContent>
+							<div className='mb-2'>
+								<Select>
+									<SelectTrigger className=''>
+										<SelectValue placeholder='Select a network' />
+									</SelectTrigger>
+									<SelectContent>
+										<SelectItem value='realnet'>Realnet</SelectItem>
+										<SelectItem value='security'>Security</SelectItem>
+										<SelectItem value='continuous_integration'>Continuous Integration</SelectItem>
+										<SelectItem value='traffic_engineering'>Traffic Engineering</SelectItem>
+									</SelectContent>
+								</Select>
+							</div>
 							<div className='flex gap-4'>
 								<div>
 									<Button>Start</Button>
@@ -419,7 +465,7 @@ export default function Home() {
 							</div>
 						</CardHeader>
 						<CardContent>
-							{/* create a list without points or numbers */}
+							{/* 
 							<ul className='list-none'>
 								<li>
 									<span className='font-semibold'>Name:</span>{' '}
@@ -447,7 +493,7 @@ export default function Home() {
 									</span>{' '}
 									{Object.keys(topoObject.interfaces).length}
 								</li>
-							</ul>
+							</ul>*/}
 						</CardContent>
 					</Card>
 				</div>

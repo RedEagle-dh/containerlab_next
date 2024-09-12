@@ -1,0 +1,578 @@
+{
+    "overview": {
+      "partition": 0,
+      "offset": "243",
+      "value": {
+        "continuous_integration": {
+          "clab-realnet_continuous_integration-ceos1": {
+            "notification": [
+              {
+                "timestamp": 1723817823894098400,
+                "prefix": null,
+                "alias": null,
+                "atomic": false,
+                "update": [
+                  {
+                    "path": "system/state",
+                    "val": {
+                      "openconfig-system:boot-time": "1723809790981927936",
+                      "openconfig-system:current-datetime": "2024-08-16T14:17:01Z",
+                      "openconfig-system:hostname": "ceos1",
+                      "openconfig-system:last-configuration-timestamp": "1723817015682111232",
+                      "openconfig-system:software-version": "4.30.3M-33434057.4303M (engineering build)"
+                    }
+                  }
+                ]
+              },
+              {
+                "timestamp": 1723817823894098400,
+                "prefix": null,
+                "alias": null,
+                "atomic": false,
+                "update": [
+                  {
+                    "path": "interfaces",
+                    "val": {
+                      "openconfig-interfaces:interface": [
+                        {
+                          "config": {
+                            "mtu": 0,
+                            "name": "Management0",
+                            "type": "iana-if-type:ethernetCsmacd"
+                          },
+                          "openconfig-if-ethernet:ethernet": {
+                            "config": {
+                              "arista-intf-augments:fec-encoding": {
+                                "disabled": false,
+                                "fire-code": false,
+                                "reed-solomon": false,
+                                "reed-solomon544": false
+                              },
+                              "mac-address": "00:00:00:00:00:00",
+                              "port-speed": "SPEED_UNKNOWN",
+                              "arista-intf-augments:sfp-1000base-t": false
+                            },
+                            "arista-intf-augments:pfc": {
+                              "priorities": {
+                                "priority": [
+                                  {
+                                    "index": 0,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 0,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 1,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 1,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 2,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 2,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 3,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 3,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 4,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 4,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 5,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 5,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 6,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 6,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 7,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 7,
+                                      "out-frames": "0"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            "state": {
+                              "counters": {
+                                "in-crc-errors": "0",
+                                "in-fragment-frames": "0",
+                                "in-jabber-frames": "0",
+                                "in-mac-control-frames": "0",
+                                "in-mac-pause-frames": "0",
+                                "in-maxsize-exceeded": "0",
+                                "in-oversize-frames": "0",
+                                "out-mac-control-frames": "0",
+                                "out-mac-pause-frames": "0"
+                              },
+                              "duplex-mode": "FULL",
+                              "hw-mac-address": "02:42:ac:14:14:06",
+                              "mac-address": "02:42:ac:14:14:06",
+                              "negotiated-duplex-mode": "FULL",
+                              "negotiated-port-speed": "SPEED_1GB",
+                              "port-speed": "SPEED_1GB",
+                              "arista-intf-augments:supported-speeds": [
+                                "SPEED_AUTO",
+                                "SPEED_1GB"
+                              ]
+                            }
+                          },
+                          "name": "Management0",
+                          "state": {
+                            "admin-status": "UP",
+                            "counters": {
+                              "carrier-transitions": "3",
+                              "in-broadcast-pkts": "0",
+                              "in-discards": "0",
+                              "in-errors": "0",
+                              "in-fcs-errors": "0",
+                              "in-multicast-pkts": "0",
+                              "in-octets": "3087484",
+                              "in-pkts": "23908",
+                              "in-unicast-pkts": "23908",
+                              "out-broadcast-pkts": "0",
+                              "out-discards": "0",
+                              "out-errors": "0",
+                              "out-multicast-pkts": "0",
+                              "out-octets": "20759140",
+                              "out-pkts": "20851",
+                              "out-unicast-pkts": "20851"
+                            },
+                            "ifindex": 999999,
+                            "arista-intf-augments:inactive": false,
+                            "last-change": "1723809810986063360",
+                            "management": true,
+                            "mtu": 0,
+                            "name": "Management0",
+                            "oper-status": "UP",
+                            "type": "iana-if-type:ethernetCsmacd"
+                          },
+                          "subinterfaces": {
+                            "subinterface": [
+                              {
+                                "index": 0,
+                                "openconfig-if-ip:ipv4": {
+                                  "addresses": {
+                                    "address": [
+                                      {
+                                        "config": {
+                                          "ip": "172.20.20.6",
+                                          "prefix-length": 24
+                                        },
+                                        "ip": "172.20.20.6",
+                                        "state": {
+                                          "ip": "172.20.20.6",
+                                          "origin": "STATIC",
+                                          "prefix-length": 24
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "neighbors": {
+                                    "neighbor": [
+                                      {
+                                        "config": {
+                                          "ip": "172.20.20.1"
+                                        },
+                                        "ip": "172.20.20.1",
+                                        "state": {
+                                          "ip": "172.20.20.1",
+                                          "link-layer-address": "02:42:6d:29:16:54",
+                                          "origin": "DYNAMIC"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "openconfig-if-ip:ipv6": {
+                                  "addresses": {
+                                    "address": [
+                                      {
+                                        "config": {
+                                          "ip": "2001:172:20:20::6",
+                                          "prefix-length": 64
+                                        },
+                                        "ip": "2001:172:20:20::6",
+                                        "state": {
+                                          "ip": "2001:172:20:20::6",
+                                          "origin": "STATIC",
+                                          "prefix-length": 64,
+                                          "status": "PREFERRED"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "config": {},
+                                  "neighbors": {
+                                    "neighbor": [
+                                      {
+                                        "config": {
+                                          "ip": "2001:172:20:20::1"
+                                        },
+                                        "ip": "2001:172:20:20::1",
+                                        "state": {
+                                          "ip": "2001:172:20:20::1",
+                                          "link-layer-address": "02:42:6d:29:16:54",
+                                          "neighbor-state": "REACHABLE",
+                                          "origin": "DYNAMIC"
+                                        }
+                                      },
+                                      {
+                                        "config": {
+                                          "ip": "fe80::42:6dff:fe29:1654"
+                                        },
+                                        "ip": "fe80::42:6dff:fe29:1654",
+                                        "state": {
+                                          "ip": "fe80::42:6dff:fe29:1654",
+                                          "link-layer-address": "02:42:6d:29:16:54",
+                                          "neighbor-state": "REACHABLE",
+                                          "origin": "DYNAMIC"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "config": {
+                            "mtu": 0,
+                            "name": "Ethernet1",
+                            "type": "iana-if-type:ethernetCsmacd"
+                          },
+                          "openconfig-if-ethernet:ethernet": {
+                            "config": {
+                              "arista-intf-augments:fec-encoding": {
+                                "disabled": false,
+                                "fire-code": false,
+                                "reed-solomon": false,
+                                "reed-solomon544": false
+                              },
+                              "mac-address": "00:00:00:00:00:00",
+                              "port-speed": "SPEED_UNKNOWN",
+                              "arista-intf-augments:sfp-1000base-t": false
+                            }
+                          },
+                          "name": "Ethernet1",
+                          "state": {
+                            "admin-status": "TESTING",
+                            "management": false
+                          },
+                          "subinterfaces": {
+                            "subinterface": [
+                              {
+                                "index": 0
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "clab-realnet_continuous_integration-ceos3": {
+            "notification": [
+              {
+                "timestamp": 1723817824106388500,
+                "prefix": null,
+                "alias": null,
+                "atomic": false,
+                "update": [
+                  {
+                    "path": "system/state",
+                    "val": {
+                      "openconfig-system:boot-time": "1723809790943993088",
+                      "openconfig-system:current-datetime": "2024-08-16T14:17:02Z",
+                      "openconfig-system:hostname": "ceos3",
+                      "openconfig-system:last-configuration-timestamp": "1723817016138255616",
+                      "openconfig-system:software-version": "4.30.3M-33434057.4303M (engineering build)"
+                    }
+                  }
+                ]
+              },
+              {
+                "timestamp": 1723817824106388500,
+                "prefix": null,
+                "alias": null,
+                "atomic": false,
+                "update": [
+                  {
+                    "path": "interfaces",
+                    "val": {
+                      "openconfig-interfaces:interface": [
+                        {
+                          "config": {
+                            "mtu": 0,
+                            "name": "Management0",
+                            "type": "iana-if-type:ethernetCsmacd"
+                          },
+                          "openconfig-if-ethernet:ethernet": {
+                            "config": {
+                              "arista-intf-augments:fec-encoding": {
+                                "disabled": false,
+                                "fire-code": false,
+                                "reed-solomon": false,
+                                "reed-solomon544": false
+                              },
+                              "mac-address": "00:00:00:00:00:00",
+                              "port-speed": "SPEED_UNKNOWN",
+                              "arista-intf-augments:sfp-1000base-t": false
+                            },
+                            "arista-intf-augments:pfc": {
+                              "priorities": {
+                                "priority": [
+                                  {
+                                    "index": 0,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 0,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 1,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 1,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 2,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 2,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 3,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 3,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 4,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 4,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 5,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 5,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 6,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 6,
+                                      "out-frames": "0"
+                                    }
+                                  },
+                                  {
+                                    "index": 7,
+                                    "state": {
+                                      "in-frames": "0",
+                                      "index": 7,
+                                      "out-frames": "0"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            "state": {
+                              "counters": {
+                                "in-crc-errors": "0",
+                                "in-fragment-frames": "0",
+                                "in-jabber-frames": "0",
+                                "in-mac-control-frames": "0",
+                                "in-mac-pause-frames": "0",
+                                "in-maxsize-exceeded": "0",
+                                "in-oversize-frames": "0",
+                                "out-mac-control-frames": "0",
+                                "out-mac-pause-frames": "0"
+                              },
+                              "duplex-mode": "FULL",
+                              "hw-mac-address": "02:42:ac:14:14:05",
+                              "mac-address": "02:42:ac:14:14:05",
+                              "negotiated-duplex-mode": "FULL",
+                              "negotiated-port-speed": "SPEED_1GB",
+                              "port-speed": "SPEED_1GB",
+                              "arista-intf-augments:supported-speeds": [
+                                "SPEED_AUTO",
+                                "SPEED_1GB"
+                              ]
+                            }
+                          },
+                          "name": "Management0",
+                          "state": {
+                            "admin-status": "UP",
+                            "counters": {
+                              "carrier-transitions": "3",
+                              "in-broadcast-pkts": "0",
+                              "in-discards": "0",
+                              "in-errors": "0",
+                              "in-fcs-errors": "0",
+                              "in-multicast-pkts": "0",
+                              "in-octets": "3083504",
+                              "in-pkts": "23875",
+                              "in-unicast-pkts": "23875",
+                              "out-broadcast-pkts": "0",
+                              "out-discards": "0",
+                              "out-errors": "0",
+                              "out-multicast-pkts": "0",
+                              "out-octets": "20029308",
+                              "out-pkts": "20927",
+                              "out-unicast-pkts": "20927"
+                            },
+                            "ifindex": 999999,
+                            "arista-intf-augments:inactive": false,
+                            "last-change": "1723809810895791872",
+                            "management": true,
+                            "mtu": 0,
+                            "name": "Management0",
+                            "oper-status": "UP",
+                            "type": "iana-if-type:ethernetCsmacd"
+                          },
+                          "subinterfaces": {
+                            "subinterface": [
+                              {
+                                "index": 0,
+                                "openconfig-if-ip:ipv4": {
+                                  "addresses": {
+                                    "address": [
+                                      {
+                                        "config": {
+                                          "ip": "172.20.20.5",
+                                          "prefix-length": 24
+                                        },
+                                        "ip": "172.20.20.5",
+                                        "state": {
+                                          "ip": "172.20.20.5",
+                                          "origin": "STATIC",
+                                          "prefix-length": 24
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "neighbors": {
+                                    "neighbor": [
+                                      {
+                                        "config": {
+                                          "ip": "172.20.20.1"
+                                        },
+                                        "ip": "172.20.20.1",
+                                        "state": {
+                                          "ip": "172.20.20.1",
+                                          "link-layer-address": "02:42:6d:29:16:54",
+                                          "origin": "DYNAMIC"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                },
+                                "openconfig-if-ip:ipv6": {
+                                  "addresses": {
+                                    "address": [
+                                      {
+                                        "config": {
+                                          "ip": "2001:172:20:20::5",
+                                          "prefix-length": 64
+                                        },
+                                        "ip": "2001:172:20:20::5",
+                                        "state": {
+                                          "ip": "2001:172:20:20::5",
+                                          "origin": "STATIC",
+                                          "prefix-length": 64,
+                                          "status": "PREFERRED"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  "neighbors": {
+                                    "neighbor": [
+                                      {
+                                        "config": {
+                                          "ip": "2001:172:20:20::1"
+                                        },
+                                        "ip": "2001:172:20:20::1",
+                                        "state": {
+                                          "ip": "2001:172:20:20::1",
+                                          "link-layer-address": "02:42:6d:29:16:54",
+                                          "neighbor-state": "REACHABLE",
+                                          "origin": "DYNAMIC"
+                                        }
+                                      },
+                                      {
+                                        "config": {
+                                          "ip": "fe80::42:6dff:fe29:1654"
+                                        },
+                                        "ip": "fe80::42:6dff:fe29:1654",
+                                        "state": {
+                                          "ip": "fe80::42:6dff:fe29:1654",
+                                          "link-layer-address": "02:42:6d:29:16:54",
+                                          "neighbor-state": "REACHABLE",
+                                          "origin": "DYNAMIC"
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  
